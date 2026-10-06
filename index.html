@@ -385,7 +385,7 @@
      APP_URL:  endereço do app (tela de login). Hoje é o staging; em produção vira o endereço final.
      CHECKOUT_URL: link de pagamento da Hotmart. Vazio = botões levam para a seção da oferta. */
   var APP_URL = "https://staging.broomemory.com.br";
-  var CHECKOUT_URL = "";
+  var CHECKOUT_URL = "https://pay.hotmart.com/J107884287P";
 
   var i, els;
   els = document.querySelectorAll(".js-login");
@@ -394,7 +394,7 @@
   for(i=0;i<els.length;i++) els[i].href = APP_URL + els[i].getAttribute("data-path");
   if(CHECKOUT_URL){
     els = document.querySelectorAll(".js-checkout");
-    for(i=0;i<els.length;i++){ els[i].href = CHECKOUT_URL; els[i].rel = "noopener"; }
+    for(i=0;i<els.length;i++){ els[i].href = CHECKOUT_URL + (location.search || ""); els[i].rel = "noopener"; }
   }
 
   var QUESTIONS = [ {a:8, op:"×", b:7}, {a:23, op:"+", b:19}, {a:41, op:"−", b:17}, {a:6, op:"×", b:9} ];
